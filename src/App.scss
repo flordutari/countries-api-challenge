@@ -1,0 +1,49 @@
+
+@import './variables.scss';
+
+* {
+  	box-sizing: border-box;
+}
+
+html, body {
+	font-family: $primary-font;
+	background-color: $light-gray;
+	color: $darkest-blue;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.root, .App {
+  	height: 100%;
+}
+
+header {
+    align-items: center;
+    background-color: $white;
+    color: $darkest-blue;
+    display: flex;
+	font-weight: $font-regular;
+	height: 100px;
+    justify-content: space-between;
+    padding: 1% 5%;
+	box-shadow: 0 0 5px 0 rgb(0 0 5 / 25%);
+
+	.title {
+		font-weight: $font-bold;
+	}
+
+	.theme-mode {
+		span {
+			margin-left: 10px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	header {
+		.title {
+			font-size: 16px;
+		}
+	}
+}
