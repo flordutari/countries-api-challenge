@@ -59,8 +59,7 @@ a:active {
   }
 
   .main {
-    padding: 1% 5%;
-    margin-top: 2%;
+    padding: 0 5%;
     font-size: 14px;
 
     // BUTTONS, INPUTS
@@ -77,6 +76,7 @@ a:active {
       font-size: 16px;
       height: 45px;
       padding: 12px 40px;
+      width: fit-content;
 
       span {
         padding-left: 20px;
@@ -84,9 +84,9 @@ a:active {
     }
 
     .sm-btn {
-      height: 35px;
-      padding: 3px 20px;
+      padding: 4px 25px;
       margin: 0 5px;
+      width: fit-content;
     }
 
     .input {
@@ -94,9 +94,10 @@ a:active {
     }
 
     // FILTER
-    .filters-container {
+    .buttons-container {
       display: flex;
       justify-content: space-between;
+      margin: 50px 0 15px 0;
     }
 
     .filter {
@@ -113,6 +114,7 @@ a:active {
     }
 
     .filter-menu {
+      background-color: $white;
       border-radius: $radius;
       margin-top: 60px;
       padding: 15px 0;
@@ -137,7 +139,6 @@ a:active {
 
     // SEARCH
     .search {
-      padding-bottom: 1em;
       position: relative;
       width: 33%;
 
@@ -172,14 +173,19 @@ a:active {
       box-shadow: $box-shadow;
       -webkit-box-shadow: $box-shadow;
       cursor: pointer;
-      height: 350px;
+      height: 360px;
       margin: 35px 0;
       overflow: hidden;
       transition: transform 200ms ease-in;
-      width: 260px;
+      width: 20%;
 
       &:hover {
         transform: scale(1.02);
+      }
+
+      .card-title {
+        font-size: 20px;
+        font-weight: $font-bold;
       }
 
       .card-flag {
@@ -205,6 +211,7 @@ a:active {
 
     .card-subtitle {
       font-weight: $font-bold;
+      white-space: nowrap;
     }
 
     // CARD DETAIL
@@ -245,11 +252,54 @@ a:active {
         }
 
         .detail-footer {
-          margin-top: auto;
+          align-items: baseline;
+          display: flex;
           margin-bottom: 40px;
+          margin-top: auto;
+
+          .border-countries {
+            display: flex;
+            flex-flow: wrap;
+            margin-left: 15px;
+
+            span {
+              margin-bottom: 10px;
+            }
+          }
         }
       }
     }
+  }
+
+  // LOADER
+  @keyframes loader {
+    0% {
+      opacity: 0;
+      width: 50px;
+      height: 50px;
+    }
+    50% {
+      opacity: 1;
+      width: 100px;
+      height: 100px;
+    }
+    100% {
+      opacity: 0;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  #loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid $darkest-blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: loader 3s infinite;
   }
 
   @media (max-width: 600px) {
@@ -264,24 +314,26 @@ a:active {
     }
 
     .main {
-      margin-top: 5%;
+      margin-top: 6%;
 
       .button {
         height: 48px;
       }
 
-      .filters-container {
+      .buttons-container {
         flex-direction: column;
+        margin: 15px 0;
       }
 
       .filter {
         margin-top: 20px;
         .filter-menu {
-          margin-top: 55px;
+          margin-top: 60px;
         }
       }
 
       .search {
+        margin-bottom: 15px;
         width: 100%;
 
         i {
@@ -293,8 +345,38 @@ a:active {
 
       .card-container {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
+      }
+
+      .card {
+        margin: 15px 0;
+        width: 100%;
+        margin: 15px 30px;
+      }
+
+      .card-detail-container {
+        flex-direction: column;
+        height: auto;
+
+        .detail-description,
+        .detail-flag {
+          margin: 0;
+          width: 100%;
+
+          .card-title {
+            font-size: 28px;
+            margin-top: 30px;
+          }
+
+          .details-list {
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            :first-child {
+              margin-top: 0;
+            }
+          }
+        }
       }
     }
   }

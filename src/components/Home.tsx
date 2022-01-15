@@ -12,7 +12,7 @@ export const Home = () => {
 
     return (
         <main className="main">
-            <div className="filters-container">
+            <div className="buttons-container">
                 <SearchBar
                     query={query}
                     handleQuery={handleQuery}
