@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Card = (props: any) => {
     return (
-        <Link to={`/${props.name}`} className="card">
+        <Link to={`/detail/${props.name}`} className="card">
             <div className="card-flag flag">
                 <img src={props.flag} alt={`${props.name}'s flag`} />
             </div>

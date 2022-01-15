@@ -11,8 +11,13 @@ export const CardDetail = () => {
     const location = useLocation();
 
 	useEffect(() => {
-        const currentPath = location.pathname;
-		getSingleCountry(currentPath);
+        if (location.pathname) {
+            const path = location.pathname.match(/[^\/]+$/);
+            if (path && path.length) {
+                let currentPath = path[0];
+                getSingleCountry(currentPath);
+            }
+        }
 	}, [])
 
 	const getSingleCountry = async (path: string) => {

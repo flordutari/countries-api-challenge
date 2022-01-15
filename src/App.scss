@@ -254,7 +254,6 @@ a:active {
         .detail-footer {
           align-items: baseline;
           display: flex;
-          margin-bottom: 40px;
           margin-top: auto;
 
           .border-countries {
@@ -269,6 +268,11 @@ a:active {
         }
       }
     }
+  }
+
+  .not-found {
+    margin-top: 10rem;
+    text-align: center;
   }
 
   // LOADER
