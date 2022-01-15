@@ -1,4 +1,3 @@
-
 @import './variables.scss';
 
 * {
@@ -14,36 +13,88 @@ html, body {
 	padding: 0;
 }
 
+input, textarea, select {
+	font-family: inherit;
+	font-size: inherit;
+}
+
 .root, .App {
   	height: 100%;
-}
+	font-family: $primary-font;
 
-header {
-    align-items: center;
-    background-color: $white;
-    color: $darkest-blue;
-    display: flex;
-	font-weight: $font-regular;
-	height: 100px;
-    justify-content: space-between;
-    padding: 1% 5%;
-	box-shadow: 0 0 5px 0 rgb(0 0 5 / 25%);
+	header {
+		align-items: center;
+		background-color: $white;
+		color: $darkest-blue;
+		display: flex;
+		font-weight: $font-regular;
+		height: 90px;
+		justify-content: space-between;
+		padding: 1% 5%;
+		box-shadow: 0 0 5px 0 rgb(0 0 5 / 25%);
 
-	.title {
-		font-weight: $font-bold;
-	}
+		.title {
+			font-weight: $font-bold;
+		}
 
-	.theme-mode {
-		span {
-			margin-left: 10px;
+		.theme-mode {
+			span {
+				margin-left: 10px;
+			}
 		}
 	}
-}
 
-@media (max-width: 600px) {
-	header {
-		.title {
-			font-size: 16px;
+	.main {
+		padding: 1% 5%;
+		margin-top: 2%;
+		font-size: 14px;
+
+		.button {
+			border: 0;
+			border-radius: 5px;
+			box-shadow: 1px 0px 14px 3px $gray;
+			-webkit-box-shadow: 1px 0px 14px 3px $gray;
+			height: 50px;
+			width: 100%;
+		}
+
+		.input-container {
+			padding-bottom: 1em;
+			position: relative;
+			width: 33%;
+
+			input {
+				padding-left: 70px !important;
+			}
+
+			i {
+				align-items: center;
+				color: $mid-gray;
+				display: flex;
+				padding-left: 30px;
+				pointer-events: none;
+				position: absolute;
+
+				svg {
+					height: 50px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		header {
+			.title {
+				font-size: 16px;
+			}
+		}
+
+		.main {
+			margin-top: 5%;
+
+			.input-container {
+				width: 100%;
+			}
 		}
 	}
 }
