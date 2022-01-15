@@ -50,15 +50,57 @@ input, textarea, select {
 		font-size: 14px;
 
 		.button {
-			border: 0;
 			border-radius: 5px;
-			box-shadow: 1px 0px 14px 3px $gray;
-			-webkit-box-shadow: 1px 0px 14px 3px $gray;
+			border: 0;
+			box-shadow: $box-shadow;
+			-webkit-box-shadow: $box-shadow;
 			height: 55px;
 			width: 100%;
 		}
 
-		.input-container {
+		.filters-container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.filter {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.filter-dropdown {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			margin: 0;
+			padding: 0 20px;
+		}
+		
+		.filter-menu {
+			border-radius: 5px;
+			margin-top: 60px;
+			padding: 15px 0;
+			position: absolute;
+			z-index: 100;
+
+			
+			.filter-item {
+				margin: 0;
+    			padding: 5px 20px;
+				width: 100%;
+
+				&:hover {
+					color: $mid-gray;
+				}
+			}
+		}
+
+		.filter-dropdown, .filter-menu {
+			background-color: $white;
+			width: 200px;
+		}
+
+		.search {
 			padding-bottom: 1em;
 			position: relative;
 			width: 33%;
@@ -82,20 +124,16 @@ input, textarea, select {
 		}
 
 		.card-container {
-			// display: grid;
-			// grid-template-columns: repeat(4, 1fr);
-			// grid-auto-rows: auto;
-			// grid-gap: 0.5rem;
 			display: flex;
 			flex-wrap: wrap;
+			gap: 12px;
 			justify-content: space-between;
-			padding-top: 2%;
 		}
 
 		.card {
 			border-radius: 5px;
-			box-shadow: 1px 0px 14px 3px $gray;
-			-webkit-box-shadow: 1px 0px 14px 3px $gray;
+			box-shadow: $box-shadow;
+			-webkit-box-shadow: $box-shadow;
 			height: 350px;
 			margin: 35px 0;
 			width: 260px;
@@ -105,8 +143,8 @@ input, textarea, select {
 				img {
 					border-radius: 5px 5px 0 0;
 					height: 100%;
-					width: 100%;
 					object-fit: cover;
+					width: 100%;
 				}
 			}
 
@@ -141,7 +179,18 @@ input, textarea, select {
 				height: 48px;
 			}
 
-			.input-container {
+			.filters-container {
+				flex-direction: column;
+			}
+			
+			.filter {
+				margin-top: 20px;
+				.filter-menu {
+					margin-top: 55px;
+				}
+			}
+
+			.search {
 				width: 100%;
 
 				i {

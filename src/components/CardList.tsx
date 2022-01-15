@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from './Card';
 
-export const CardContainer = () => {
+type CardListProps = {
+  search: string
+}
+
+export const CardList = ({search}: CardListProps) => {
     const [countries, setCountries] = useState<any[]>([]);
 
     const countriesData = [{
@@ -963,7 +967,13 @@ export const CardContainer = () => {
 
     return (
         <div className="card-container">
-            {countries.map(item => {
+            {countries
+			.filter(({name, region, capital}) => {
+				const valuesToSearch = [name, region, capital]
+				.map(val => ` ${val}`.toLowerCase());
+				return valuesToSearch.join('.').includes(search.toLowerCase());
+			})
+			.map(item => {
                 return <Card
                     key={item.name}
                     name={item.name}

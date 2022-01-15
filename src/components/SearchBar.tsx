@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { ChangeEventHandler } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-export const SearchBar = () => {
+type SearchBarProps = {
+    query: string,
+    handleQuery: ChangeEventHandler<HTMLInputElement>
+}
+
+export const SearchBar = ({ query, handleQuery }: SearchBarProps) => {
     return (
-        <div className="input-container">
+        <div className="search">
             <i><FontAwesomeIcon icon={faSearch}/></i>
-            <input type="text" className="button" placeholder="Search for a country..."/>
+            <input
+                type="text"
+                value={query}
+                className="button"
+                onChange={handleQuery}
+                placeholder="Search for a country..."
+            />
         </div>
     )
 }
