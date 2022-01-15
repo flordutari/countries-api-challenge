@@ -14,7 +14,7 @@ export const SearchBar = ({ query, handleQuery }: SearchBarProps) => {
             <input
                 type="text"
                 value={query}
-                className="button"
+                className="primary-button input"
                 onChange={handleQuery}
                 placeholder="Search for a country..."
             />

@@ -3,7 +3,7 @@ import { CardList } from './CardList';
 import { Filter } from './Filter';
 import { SearchBar } from './SearchBar';
 
-export const Main = () => {
+export const Home = () => {
     const [query, setQuery] = useState('');
 
     const handleQuery = (e: FormEvent<HTMLInputElement>): void => {

@@ -968,19 +968,20 @@ export const CardList = ({search}: CardListProps) => {
     return (
         <div className="card-container">
             {countries
-			.filter(({name, region, capital}) => {
-				const valuesToSearch = [name, region, capital]
-				.map(val => ` ${val}`.toLowerCase());
-				return valuesToSearch.join('.').includes(search.toLowerCase());
-			})
-			.map(item => {
+            .filter(({name, region, capital}) => {
+              const valuesToSearch = [name, region, capital]
+              .map(val => ` ${val}`.toLowerCase());
+              return valuesToSearch.join('.').includes(search.toLowerCase());
+            })
+            .map(item => {
                 return <Card
-                    key={item.name}
+                    key={item.cioc}
                     name={item.name}
                     population={item.population}
                     region={item.region}
                     capital={item.capital}
                     flag={item.flag}
+                    code={item.cioc}
                 />
             })}
         </div>
