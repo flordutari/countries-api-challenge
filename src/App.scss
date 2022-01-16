@@ -2,13 +2,13 @@
 
 * {
   box-sizing: border-box;
+  color: $darkest-blue;
 }
 
 html,
 body {
   font-family: $primary-font;
   background-color: $light-gray;
-  color: $darkest-blue;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -122,12 +122,14 @@ a:active {
       z-index: 100;
 
       .filter-item {
+        cursor: pointer;
         margin: 0;
         padding: 5px 20px;
         width: 100%;
 
-        &:hover {
-          color: $mid-gray;
+        &:hover,
+        &.active {
+          color: $dark-gray;
         }
       }
     }

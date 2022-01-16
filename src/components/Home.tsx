@@ -5,9 +5,14 @@ import { SearchBar } from './SearchBar';
 
 export const Home = () => {
     const [query, setQuery] = useState('');
+    const [filter, setFilter] = useState('');
 
     const handleQuery = (e: FormEvent<HTMLInputElement>): void => {
         setQuery(e.currentTarget.value);
+    };
+
+    const handleFilter = (e: FormEvent<HTMLParagraphElement>): void => {
+        setFilter(e.currentTarget.innerText);
     };
 
     return (
@@ -17,9 +22,12 @@ export const Home = () => {
                     query={query}
                     handleQuery={handleQuery}
                 />
-                <Filter />
+                <Filter
+                    filter={filter}
+                    handleFilter={handleFilter}
+                />
             </div>
-            <CardList search={query}/>
+            <CardList search={query} filter={filter}/>
         </main>
     )
 }

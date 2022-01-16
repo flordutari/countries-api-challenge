@@ -80,7 +80,7 @@ export const CardDetail = () => {
                                     country.borders.map((item: string) => {
                                         return <span key={item} className="primary-button sm-btn">{item}</span>
                                     })
-                                    : <div>--</div>
+                                    : <i>--</i>
                                 }
                             </p>
                         </div>
