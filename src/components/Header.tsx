@@ -1,18 +1,31 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
+import { faMoon as faMoonFill } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { ThemeContext, themes } from '../contexts/ThemeContext';
 
 export const Header = () => {
+    const [darkMode, setDarkMode] = React.useState(true);
+
     return (
         <header>
             <Link to="/">
                 <h2 className="title">Where in the world?</h2>
             </Link>
-            <div className="theme-mode">
-                <FontAwesomeIcon icon={faMoon}/>
-                <span>Dark Mode</span>
-            </div>
+            <ThemeContext.Consumer>
+                {({ changeTheme }) => (
+                    <div className="theme-mode"
+                        onClick={() => {
+                            setDarkMode(!darkMode);
+                            changeTheme(darkMode ? themes.dark : themes.light);
+                        }}
+                    >
+                        <FontAwesomeIcon icon={!darkMode ? faMoon : faMoonFill}/>
+                        <span>Dark Mode</span>
+                    </div>
+                )}
+            </ThemeContext.Consumer>
         </header>
     )
 }

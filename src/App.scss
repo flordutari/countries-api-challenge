@@ -2,16 +2,21 @@
 
 * {
   box-sizing: border-box;
-  color: $darkest-blue;
 }
 
 html,
 body {
   font-family: $primary-font;
   background-color: $light-gray;
+  color: $darkest-blue;
   height: 100%;
   margin: 0;
   padding: 0;
+
+  .dark-content {
+    background-color: $very-dark-blue;
+    color: $light-gray !important;
+  }
 }
 
 input,
@@ -31,14 +36,12 @@ a:active {
   font-weight: inherit;
 }
 
-.root,
 .App {
   height: 100%;
   font-family: $primary-font;
 
   header {
     align-items: center;
-    background-color: $white;
     color: $darkest-blue;
     display: flex;
     font-weight: $font-regular;
@@ -52,6 +55,7 @@ a:active {
     }
 
     .theme-mode {
+      cursor: pointer;
       span {
         margin-left: 10px;
       }
@@ -67,8 +71,8 @@ a:active {
       background-color: $white;
       border-radius: $radius;
       border: 0;
-      box-shadow: $box-shadow;
-      -webkit-box-shadow: $box-shadow;
+      box-shadow: $shadow;
+      -webkit-box-shadow: $shadow;
       width: 100%;
     }
 
@@ -172,8 +176,8 @@ a:active {
 
     .card {
       border-radius: $radius;
-      box-shadow: $box-shadow;
-      -webkit-box-shadow: $box-shadow;
+      box-shadow: $shadow;
+      -webkit-box-shadow: $shadow;
       cursor: pointer;
       height: 360px;
       margin: 35px 0;
@@ -308,6 +312,18 @@ a:active {
     animation: loader 3s infinite;
   }
 
+  // DARK MODE
+  body.dark-content header {
+    header {
+      background-color: $dark-blue;
+    }
+
+  }
+  .card.dark-content, .primary-button.dark-content {
+    background-color: $dark-blue;
+  }
+
+  // MOBILE
   @media (max-width: 600px) {
     header {
       .title {
