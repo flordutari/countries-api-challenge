@@ -9,7 +9,6 @@ body {
   font-family: $primary-font;
   background-color: $light-gray;
   color: $darkest-blue;
-  height: 100%;
   margin: 0;
   padding: 0;
 
@@ -183,7 +182,7 @@ a:active {
       margin: 35px 0;
       overflow: hidden;
       transition: transform 200ms ease-in;
-      width: 20%;
+      width: 21%;
 
       &:hover {
         transform: scale(1.02);
@@ -313,13 +312,9 @@ a:active {
   }
 
   // DARK MODE
-  body.dark-content header {
-    header {
-      background-color: $dark-blue;
-    }
-
-  }
-  .card.dark-content, .primary-button.dark-content {
+  .card.dark-content,
+  .primary-button.dark-content,
+  header.dark-content {
     background-color: $dark-blue;
   }
 

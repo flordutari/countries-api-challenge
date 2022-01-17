@@ -18,10 +18,10 @@ export const Header = () => {
                     <div className="theme-mode"
                         onClick={() => {
                             setDarkMode(!darkMode);
-                            changeTheme(darkMode ? themes.dark : themes.light);
+                            changeTheme(darkMode ? themes.light : themes.dark);
                         }}
                     >
-                        <FontAwesomeIcon icon={!darkMode ? faMoon : faMoonFill}/>
+                        <FontAwesomeIcon icon={!darkMode ? faMoonFill : faMoon}/>
                         <span>Dark Mode</span>
                     </div>
                 )}
